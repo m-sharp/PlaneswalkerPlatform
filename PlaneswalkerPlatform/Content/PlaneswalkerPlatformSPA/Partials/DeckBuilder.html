@@ -1,0 +1,34 @@
+﻿
+<div id="deckBuilderPartial" class="container-full deckBuilderPartial">
+    <main class="main">
+        <section class="container-full">
+            <h1 class="heading-deck-builder">Deck Builder</h1>
+            <div class="deck-manager-parent grid-parent">
+                <div class="grid-child left-pane">
+                    <div class="search-card-holder">
+                        <img alt="CardSearchImage" id="CardSearchImg" ng-model="CurrentSearchCard" />
+                        <ul class="CardVersions">
+                            <li ng-repeat="multiverseid in CurrentSearchCard.Versions"><img alt="Alerternate Version" ng-src="{{GetCardImageSrcForId(multiverseid);}}" /></li>
+                        </ul>
+                    </div>
+                    <div class="search-pane-holder">
+                        <div class="search-box-holder">
+                            <input type="text" name="Search Box" alt="Card Search Text Box" class="search-pane-search-box" data-ng-model="CardSearchString" placeholder="Search by Card" />
+                        </div>
+                        <div class="search-sneak-peek-holder">
+                            <ul class="sneak-peek-data">
+                                <li ng-repeat="card in CardInfo | SearchByName:CardSearchString:5">
+                                    <span class="CardHint" ng-click="UpdatePicture(card);">{{card.name}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="grid-child main-pane">
+                    <p>div card grids with display:inline-block, vertical-alignment: top</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css")
+    <link href='http://fonts.googleapis.com/css?family=Damion|Roboto:400,300,400italic,700,700italic|Lato:400,300,400italic,700,700italic|Merriweather:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body data-ng-app="PlaneswalkerPlatform">
+   <header class="header" data-ng-controller="NavigationController as nav">
+       <div class="clearfix">
+            <div class="logo-block grid-child">
+                <a href="#/Home" class="logo">Planeswalker Platform</a>
+            </div>
+            <a href="" class="nav-trigger icon-menu"></a>
+            <nav class="nav-block">
+                    <ul class="ul-base nav">
+                        <li data-ng-repeat="route in nav.Routes()">
+                            <a href="#{{route.path}}" data-ng-class="{'active': nav.isActive('{{route.path}}')}">{{route.name}}</a>
+                        </li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="notify" style=""></div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <div class="container-full">
+            <div class="footer-copyright-block">
+                <div>&copy; @DateTime.Now.Year - Mike Harp</div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/js")
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+
+    
+
+    <script src="~/Content/PlaneswalkerPlatformSPA/PlaneswalkerPlatform.js"></script>
+
+    <script src="~/Content/PlaneswalkerPlatformSPA/Controllers/DeckBuilderController.js"></script>
+    <script src="~/Content/PlaneswalkerPlatformSPA/Controllers/HomeController.js"></script>
+    <script src="~/Content/PlaneswalkerPlatformSPA/Controllers/MyAccountController.js"></script>
+    <script src="~/Content/PlaneswalkerPlatformSPA/Controllers/NavigationController.js"></script>
+
+    <script src="~/Content/PlaneswalkerPlatformSPA/Providers/Factories/CardImageFactory.js"></script>
+    <script src="~/Content/PlaneswalkerPlatformSPA/Providers/Factories/CardInfoFactory.js"></script>
+    <script src="~/Content/PlaneswalkerPlatformSPA/Providers/Factories/HttpInterceptorFactory.js"></script>
+
+    <script src="~/Content/PlaneswalkerPlatformSPA/Providers/Managers/CardManager.js"></script>
+
+    <script src="~/Content/PlaneswalkerPlatformSPA/Providers/Models/CardModelService.js"></script>
+    
+    <script src="~/Content/PlaneswalkerPlatformSPA/Providers/Filters/SearchByNameFilter.js"></script>
+</body>
+</html>

@@ -1,0 +1,698 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #eee;
+}
+
+body, input, select, button {
+  font-family: "Lato", sans-serif;
+  font-size: 17px;
+  color: #555;
+}
+
+ 
+/*-------------------------------------*/
+/* GLOBAL STYLES */
+
+a {
+    color: #888;
+    text-decoration: none;
+    transition: all 0.1s ease-in;
+}
+
+a:hover, a:focus {
+    color: inherit;
+    opacity: 0.8;
+    transition: all 0.1s ease-in;
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+sub, sup {
+  font-size: 65%;
+  position: relative;
+  line-height: 0;
+}
+
+sup {
+  top: -8px;
+}
+
+sub {
+  bottom: -8px;
+}
+
+p {
+  margin: 0 0 15px 0;
+}
+
+h6 {
+  font-size: 110%;
+}
+
+h5 {
+  font-size: 120%;
+}
+
+h4 {
+  font-size: 130%;
+}
+
+h3 {
+  font-size: 140%;
+}
+
+h2 {
+  font-size: 160%;
+}
+
+h1 {
+  font-size: 180%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merriweather", serif;
+    padding: 0 0 15px 0;
+}
+
+ol, ul  {
+  padding-left:20px;
+  list-style-position: inside;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+input[type="submit"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+}
+
+input[type="submit"]:focus {
+    outline: 0;
+}
+
+input[type="submit"], button {
+  cursor: pointer;
+}
+
+.button {
+    color: #fff;
+    font-weight: 300;
+    background-color: #9D67AD;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+
+a.button{
+    color: #fff
+}
+
+.button:hover, .button:focus {
+    background-color: #733785;
+    transition: all 0.1s ease-in;
+}
+
+textarea {
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid;
+  padding: 20px;
+}
+
+th {
+  font-weight: 700;
+}
+
+
+/*-------------------------------------*/
+/* HELPERS */
+
+
+/* Helpers: Floats and Clearing */
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+.clear {
+  clear: both;
+} 
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.notify {
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding:10px;
+    z-index: 100;
+}
+
+.notify--success {
+    background-color: #34945F;
+}
+
+.notify--success:after {
+    font-family: "icomoon";
+    content: "\e206";
+}
+
+.notify--failure {
+        background-color: red;
+}
+
+.notify--failure:after {
+    font-family: "icomoon";
+    content: "\e209"
+}
+/* Helpers: Typography */
+
+.heading-primary {
+    font-size: 200%;
+    font-family: inherit;
+    font-weight: 300;
+    text-align: center;
+    padding: 37px 0;
+}
+
+.heading-secondary {
+    font-size: 130%;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+
+.ul-base {
+  padding: 0;
+  list-style-type: none;
+}
+
+.font-small {
+  font-size: 90%; 
+}
+
+.font-smaller {
+  font-size: 80%; 
+}
+
+.font-smallest {
+  font-size: 70%; 
+}
+
+.font-large {
+  font-size: 110%; 
+}
+
+.font-larger {
+  font-size: 120%; 
+}
+
+.font-largest {
+  font-size: 130%; 
+}
+
+.homePartial {
+    background-image: url("img/pink_rice.png");
+}
+
+
+
+/* Helpers: Centering */
+
+.center {
+  text-align: center;
+}
+
+.center-element {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.dead-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+
+/* Helpers: Full-width */
+
+.full-width {
+  display: block;
+  width: 100%;
+}
+
+/* Helpers: Gradient */
+
+.overlay-gradient {
+  background-color: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/*-------------------------------------*/
+/* GRID */
+
+.grid-parent {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.grid-parent:after {
+  content: "";
+  display: table;
+  clear: both;  
+}
+
+.grid-child {
+  padding-left: 15px;
+  padding-right: 15px; 
+}
+
+/*-------------------------------------*/
+/* CONTAINERS */
+
+.container-full, .container-main, .container-mid, .container-sm, .container-xs {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container-full {
+  max-width: 100%;
+}
+
+.container-main {
+  max-width: 1200px;
+}
+
+.container-mid {
+  max-width: 900px;
+}
+
+.container-sm {
+  max-width: 700px;
+}
+
+.container-xs {
+  max-width: 600px;
+}
+
+
+/*-------------------------------------*/
+/* LAYOUT: HEADER */
+
+.header {
+  background-color: #555;
+  position: relative;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.header a {
+  color: inherit;
+}
+
+/* Header: Logo */
+
+.logo {
+  font-size: 24px;
+  display: block;
+  font-family: "Damion", cursive;
+}
+
+@media only screen and (max-width: 700px) {
+    .logo-block {
+        text-align: center;
+    }
+}
+
+
+
+/* Header: Navigation */
+@media only screen and (max-width: 700px) {
+    .nav-trigger {
+        position: fixed;
+        right: 0;
+        top: 0;
+        padding: 10px;
+        font-size: 22px;
+    }
+
+    .nav-block {
+        background-color: #444;
+        position: fixed;
+        right: 0;
+        top: 38px;
+        bottom: 0;
+        height: 100%;
+        width: 200px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0 0 46px 0;
+        box-shadow: -2px 0 3px rgba(0, 0, 0, 0.2);
+        text-align: right;
+        z-index: 100;
+        visibility: hidden;
+        transition: all 0.2s linear;
+    }
+
+    .nav-block-open{
+        visibility: visible;
+        transition: all 0.2s linear;
+    }
+
+    .nav li a{
+        padding: 12px 10px;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav li:last-of-type a{
+        border-bottom: none;
+    }
+}
+
+.nav-block {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 80%;
+}
+.nav li a {
+  padding: 10px;
+}
+
+    .nav li a.active {
+        font-weight: 700;
+    }
+
+@media only screen and (min-width: 700px) {
+  .nav-trigger {
+      display: none;
+  }
+
+   .logo-block {
+    float: left;
+  }
+
+  .nav-block {
+    float: right;
+    visibility: visible;
+  }
+
+  .nav li, .nav li a {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .nav li a:hover {
+      background-color: #444;
+      transition: all 0.1s ease-in;
+  }
+}
+
+
+/*-------------------------------------*/
+/* LAYOUT: FOOTER */
+
+.footer {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  background-color: #555;
+  padding: 10px 0;
+  height:42px;
+}
+
+.footer a {
+  color: #fff;
+}
+
+.footer-copyright-block {
+  font-size: 60%;
+  margin: 5px 0 0 0;
+}
+
+/* Footer: Social Icons */
+
+
+/* Footer: Copyright Block */
+
+
+/*-------------------------------------*/
+/* PAGE: HOME */
+.home-block {
+    text-align: center;
+}
+
+.home-each {
+    margin: 0 0 20px 0;
+    font-weight: 300;
+}
+
+.home-each-link {
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    position: relative;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, .2);
+}
+
+.home-each-link:hover {
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.01s ease-in;
+    transform: translateY(-10px);
+}
+
+.home-each-img {
+    display: block;
+}
+
+.home-each-info {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.home-info-title {
+    text-transform: uppercase;
+}
+
+@media only screen and (min-width: 600px) {
+  .home-each {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .home-each {
+    width: 33.33%;
+  }
+}
+
+/*-------------------------------------*/
+/* PAGE: DeckBuilder */
+.deckBuilderPartial {
+    background-image: url("img/classy_fabric.png");
+    color: #eee;
+    padding-bottom: 7px;
+}
+
+.deckBuilderPartial .heading-primary {
+    padding: 15px 0;
+}
+
+.deckBuilderPartial .heading-deck-builder {
+    font-size: 130%;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+.deckBuilderPartial .deck-manager-parent {
+  height: 545px;
+  border: white;
+  border-width: 2px;
+  border-style: solid;
+  display: block;
+}
+
+.deckBuilderPartial .deck-manager-parent .grid-child {
+    border: white;
+    border-width: 2px;
+    border-style: solid;
+    display: block;
+    height: 100%;
+    padding: 10px;
+}
+
+.deck-manager-parent .left-pane {
+    width: 19%;
+    float: left;
+}
+
+.deck-manager-parent .main-pane {
+    width: 81%;
+    float: left;
+}
+
+.deck-manager-parent .search-card-holder img {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+}
+
+.deck-manager-parent .card-search-holder {
+    padding-bottom: 5px;
+}
+
+.deck-manager-parent .search-box-holder input {
+    width: 100%;
+}
+
+/*-------------------------------------*/
+/* PAGE: TEAM */
+
+
+/*-------------------------------------*/
+/* PAGE: CONTACT */
+
+
+/*-------------------------------------*/
+/* MEDIA QUERIES */
+
+
+@media only screen and (min-width: 1200px) {
+}
+
+@media only screen and (min-width: 900px) {
+}
+
+@media only screen and (min-width: 700px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-g5epj');
+	src:url('fonts/icomoon.eot?#iefix-g5epj') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?-g5epj') format('truetype'),
+		url('fonts/icomoon.woff?-g5epj') format('woff'),
+		url('fonts/icomoon.svg?-g5epj#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-location_on:before {
+	content: "\e052";
+}
+.icon-mail:before {
+	content: "\e002";
+}
+.icon-menu:before {
+	content: "\e120";
+}
+.icon-check:before {
+	content: "\e206";
+}
+.icon-close:before {
+	content: "\e209";
+}
+.icon-facebook:before {
+	content: "\e601";
+}
+.icon-twitter:before {
+	content: "\e602";
+}
+.icon-skype:before {
+	content: "\e603";
+}
+.icon-google-plus:before {
+	content: "\e600";
+}

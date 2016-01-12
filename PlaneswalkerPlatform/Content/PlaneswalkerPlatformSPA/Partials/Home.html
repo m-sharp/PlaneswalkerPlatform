@@ -1,0 +1,26 @@
+﻿<div id="HomePartial" class="container-full homePartial">
+    <main class="main">
+        <section class="container-main">
+            <div class="center">
+                <div class="banner-home">
+                    <div class="heading-block">
+                        <h1 class="heading-primary heading-primary--banner">Welcome To Planeswalker Platform!</h1>
+                    </div>
+                    <div class="banner-img-block clearfix">
+                        <ul class="grid-parent ul-base" data-ng-controller="NavigationController as nav">
+                            <li data-ng-repeat="route in nav.Routes('false')" class="home-each grid-child" data-ng-class="{'active': nav.isActive('{{route.path}}')}">
+                                <a href="#{{route.path}}" class="home-each-link">
+                                    <img src="http://placehold.it/280x442" alt="{{route.name}}" class="home-each-img" />
+                                    <div class="home-each-info">
+                                        <div class="home-info-title">{{route.name}}</div>
+                                    </div>
+                                    <div class="overlay-gradient"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
